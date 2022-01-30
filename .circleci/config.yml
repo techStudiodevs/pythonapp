@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  build-medium:
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: arm.medium
+    steps:
+      - checkout
+      - run: echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+      - run: pwd 
+      - run: ls -la 
+      - run: make build
+      - run: make push
+      
+workflows:
+  build:
+    jobs:
+      - build-medium
