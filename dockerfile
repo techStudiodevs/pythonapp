@@ -1,4 +1,4 @@
-FROM arm64v8/python:2-alpine3.11
+FROM arm64v8/python:3.9-alpine3.14
 
 RUN pip install --upgrade pip
 
