@@ -11,4 +11,4 @@ COPY run.py ./run.py
 RUN pip install -r requirements.txt
 
 EXPOSE 5500
-CMD [ "python3", "./run.py" ]
+CMD [ "python", "./run.py" ]
